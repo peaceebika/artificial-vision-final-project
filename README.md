@@ -371,7 +371,16 @@ Used to rank drought/stress severity.
 
 ---
 
-## 7.4 Random Forest Feature Importance
+## 7.4 Stress Prediction Results
+
+| Metric | Value |
+|-------|------|
+| Accuracy | ~97% |
+| Cross-Validation Mean Accuracy | ~92.8% |
+
+----
+
+## 7.5 Random Forest Feature Importance
 
 A Random Forest classifier was implemented to predict environmental stress using multimodal features derived from satellite vegetation indices and atmospheric data.
 
@@ -383,19 +392,68 @@ The feature importance results showed:
 | Mean EVI | 0.362667 |
 | Temperature | 0.163403 |
 
-This indicates that NDWI contributed the most to the stress prediction model, followed by EVI and temperature. The result suggests that water-related vegetation/moisture information played the strongest role in identifying stressed regions in this experiment.
+This indicates that NDWI contributed the most to the stress prediction model, followed by EVI and temperature.
+
+The result suggests that water-related vegetation/moisture information played the strongest role in identifying stressed regions in this experiment.
+
+Feature importance visualization:
+
+![Feature Importance](results/feature_importance.png)
 ---
 
-## 7.5 Stress Prediction Results
+## 7.6 Spatial Stress Mapping and Drought Anomaly Detection
 
-| Metric | Value |
-|-------|------|
-| Accuracy | ~97% |
-| Cross-Validation Mean Accuracy | ~92.8% |
+Spatial stress maps and drought anomaly maps were generated using the merged multimodal dataset.
+
+The generated maps highlighted:
+
+- regions with severe drought conditions,
+- regions with weak vegetation health,
+- and regions with combined climate instability and vegetation degradation.
+
+The priority risk mapping framework allowed stressed regions to be ranked based on:
+
+- SPI severity,
+- vegetation condition,
+- and climate variability.
+
+Generated outputs included:
+
+- Stress maps
+- Drought anomaly maps
+- Priority risk ranking maps
+
+Example outputs:
+
+![Stress Map](results/stress_map.png)
+
+![Drought Anomaly Map](results/drought_anomaly_map.png)
+
+---
+## 7.7 Relationship Between SPI and Vegetation Stress
+
+The project explored the relationship between atmospheric drought conditions and vegetation stress.
+
+SPI was used to characterize temporal drought severity, while vegetation indices and CNN outputs described spatial vegetation conditions.
+
+The multimodal analysis revealed that:
+
+- several low-vegetation regions also exhibited severe drought conditions,
+- while some vegetation-stressed regions did not correspond to strong drought signals.
+
+This suggests that vegetation degradation may result from multiple interacting factors, including:
+
+- drought,
+- temperature variation,
+- land-use changes,
+- agricultural activity,
+- or environmental disturbance.
+
+The integration of SPI and vegetation analysis therefore provided stronger environmental interpretation than using imagery alone.
 
 ---
 
-## 7.6 Feature Importance Ranking
+## 7.8 Feature Importance Ranking
 
 1. NDVI  
 2. EVI  
