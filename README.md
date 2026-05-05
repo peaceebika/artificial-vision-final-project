@@ -71,7 +71,7 @@ This project addresses the following problem:
 - **Source:** ERA5 Reanalysis Climate Data  
 - **Provider:** ECMWF / Copernicus Climate Data Store  
 - **Dataset Link:**  
-  - ERA5 Monthly Reanalysis: [View the ERA5 Code](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=download))
+  - ERA5 Monthly Reanalysis: [View the ERA5 Code](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=download)
 
 - **Variables Used:**
   - Precipitation
