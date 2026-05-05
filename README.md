@@ -452,6 +452,23 @@ This suggests that vegetation degradation may result from multiple interacting f
 The integration of SPI and vegetation analysis therefore provided stronger environmental interpretation than using imagery alone.
 
 ---
+### Temporal SPI Trend
+
+Monthly SPI averages were computed to analyze the temporal evolution of drought conditions throughout the study period.
+
+The SPI trend demonstrates changing atmospheric moisture conditions across the year, including:
+
+- dry periods (negative SPI),
+- neutral periods,
+- and wetter periods (positive SPI).
+
+This temporal analysis was important because vegetation stress often results from prolonged atmospheric conditions rather than a single observation period.
+
+Temporal SPI visualization:
+
+![Temporal SPI Trend](results/temporal_spi_trend.png)
+
+---
 
 ## 7.8 Feature Importance Ranking
 
