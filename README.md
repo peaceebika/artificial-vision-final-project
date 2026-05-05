@@ -57,8 +57,7 @@ This project addresses the following problem:
 - **Acquisition Platform:** Google Earth Engine  
 - **Dataset Link:**  
   - Sentinel-2 Harmonized:[ https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED](https://code.earthengine.google.com/57f295458a2a7c4d9310470e3eb3a161?noload=1)
-  - Landsat Collection 2: https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_L2
-
+ 
 - **Bands Used:**
   - Red
   - Green
