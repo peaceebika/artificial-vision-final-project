@@ -53,20 +53,31 @@ This project addresses the following problem:
 
 ## 4.1 Satellite Imagery
 
-- Source: Sentinel-2 / Landsat Multispectral TIFF Imagery
-- Bands Used:
+- **Source:** Sentinel-2 / Landsat Multispectral TIFF Imagery  
+- **Acquisition Platform:** Google Earth Engine  
+- **Dataset Link:**  
+  - Sentinel-2 Harmonized: https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED
+  - Landsat Collection 2: https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C02_T1_L2
+
+- **Bands Used:**
   - Red
   - Green
   - Blue
   - Near Infrared (NIR)
 
+---
+
 ## 4.2 Atmospheric Data
 
-- Source: ERA5 Reanalysis Climate Data
-- Variables Used:
+- **Source:** ERA5 Reanalysis Climate Data  
+- **Provider:** ECMWF / Copernicus Climate Data Store  
+- **Dataset Link:**  
+  - ERA5 Monthly Reanalysis: https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means
+
+- **Variables Used:**
   - Precipitation
   - Temperature
-
+  
 ## 4.3 Dataset Composition
 
 | Data Type | Count |
