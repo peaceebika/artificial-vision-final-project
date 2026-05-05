@@ -56,7 +56,7 @@ This project addresses the following problem:
 - **Source:** Sentinel-2 / Landsat Multispectral TIFF Imagery  
 - **Acquisition Platform:** Google Earth Engine  
 - **Dataset Link:**  
-  - Sentinel-2 Harmonized:[ https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED](https://code.earthengine.google.com/57f295458a2a7c4d9310470e3eb3a161?noload=1)
+  - Sentinel-2 Harmonized:[ https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED][View the Earth Engine Code](https://code.earthengine.google.com/57f295458a2a7c4d9310470e3eb3a161?noload=1)
  
 - **Bands Used:**
   - Red
@@ -71,7 +71,7 @@ This project addresses the following problem:
 - **Source:** ERA5 Reanalysis Climate Data  
 - **Provider:** ECMWF / Copernicus Climate Data Store  
 - **Dataset Link:**  
-  - ERA5 Monthly Reanalysis: https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means
+  - ERA5 Monthly Reanalysis: [View the ERA5 Code](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means)
 
 - **Variables Used:**
   - Precipitation
