@@ -1,121 +1,221 @@
-# Artificial Vision Final Project  
-## Vegetation / Non-Vegetation Classification from Multi-Band Satellite Imagery Using CNN and Semi-Supervised Learning
+# Artificial Vision Final Project
+## Multimodal Vegetation Stress and Drought Analysis Using Satellite Imagery, CNNs, SPI, and Machine Learning
 
 ---
 
 # 1. Project Overview
 
-This project develops a computer vision pipeline for classifying vegetation and non-vegetation regions from multi-band satellite imagery.
+This project develops a complete artificial vision and multimodal environmental analysis pipeline for detecting vegetation conditions and drought-related stress using satellite imagery and atmospheric climate data.
 
-The work integrates:
+The project integrates:
 
-- Atmospheric drought indicator analysis using precipitation data
-- Multi-band satellite image preprocessing
-- Convolutional Neural Network (CNN) based image classification
-- Semi-supervised pseudo-labeling for leveraging unlabeled data
-
-The goal is to build an automated framework capable of identifying vegetation coverage from satellite imagery while exploring the impact of pseudo-labeling on classification performance.
+- Multi-band satellite image processing
+- Vegetation/non-vegetation classification using a custom CNN
+- Semi-supervised pseudo-labeling on unlabeled imagery
+- ERA5 atmospheric drought analysis using SPI
+- Vegetation index extraction using NDVI, NDWI, and EVI
+- Multimodal climate–vegetation fusion
+- Random Forest and XGBoost stress prediction
+- Spatial drought/stress mapping and priority-risk ranking
 
 ---
 
 # 2. Problem Statement
 
-Large-scale satellite datasets often contain:
+Large-scale satellite datasets often contain a small amount of manually labeled imagery and a large amount of unlabeled imagery. At the same time, vegetation degradation cannot always be explained from satellite images alone, because vegetation stress may be caused by:
 
-- A small amount of labeled imagery
-- A large amount of unlabeled imagery
-- High computational cost for manual annotation
+- Prolonged low precipitation
+- Elevated temperature
+- Seasonal instability
+- Human/environmental disturbance
 
-This project addresses:
+This project addresses the following problem:
 
-> How can we classify vegetation from multi-band satellite imagery using limited labeled data while exploiting a large pool of unlabeled images?
+> How can satellite imagery and atmospheric data be combined to classify vegetation patterns and identify drought-related vegetation stress?
 
 ---
 
-# 3. Dataset Description
+# 3. Project Objectives
 
-## Satellite Imagery
+1. Preprocess multi-band satellite imagery for computer vision analysis  
+2. Classify vegetation and non-vegetation regions using a custom CNN  
+3. Use semi-supervised pseudo-labeling to explore unlabeled imagery  
+4. Compute drought indicators from ERA5 precipitation data  
+5. Extract vegetation indices such as NDVI, NDWI, and EVI  
+6. Merge satellite and climate datasets using spatial matching  
+7. Build machine learning models for environmental stress prediction  
+8. Generate quantitative metrics, maps, and feature-importance results  
+9. Follow the full computer vision pipeline required in the course  
 
-- Source: Sentinel-2 Multi-Band TIFF Satellite Images
+---
+
+# 4. Dataset Description
+
+## 4.1 Satellite Imagery
+
+- Source: Sentinel-2 / Landsat Multispectral TIFF Imagery
 - Bands Used:
   - Red
   - Green
   - Blue
   - Near Infrared (NIR)
 
-## Dataset Composition
+## 4.2 Atmospheric Data
+
+- Source: ERA5 Reanalysis Climate Data
+- Variables Used:
+  - Precipitation
+  - Temperature
+
+## 4.3 Dataset Composition
 
 | Data Type | Count |
-|----------|------|
+|----------|------:|
 | Total TIFF Images | 17,161 |
 | Labeled Samples | 186 |
 | Unlabeled Samples | 16,975 |
 
 ---
 
-# 4. Methodology
+# 5. Computer Vision Pipeline Alignment with Course Requirements
 
 ---
 
-## 4.1 Atmospheric Data Processing
+## Step 0: Source Data to Image Representation
 
-Precipitation data was processed to compute:
+The project uses multispectral satellite imagery and atmospheric ERA5 climate data.
 
-- Standardized Precipitation Index (SPI)
-
-Purpose:
-
-- Integrate drought-related atmospheric analysis into vegetation monitoring framework.
+- Satellite data was already image-based in GeoTIFF format.
+- ERA5 atmospheric data was converted into structured spatial-temporal features linked to image tile locations.
 
 ---
 
-## 4.2 Image Preprocessing Pipeline
+## Step 1: Image Preprocessing / Filtering
 
-### Step 1: TIFF Loading
+Preprocessing steps included:
 
-Loaded 4-band GeoTIFF satellite imagery.
-
----
-
-### Step 2: Tile Generation
-
-Large TIFF images were split into:
-
-- 128×128 / 256×256 tiles
-
-Purpose:
-
-- Make images suitable for CNN training.
+- Loading multi-band GeoTIFF satellite images
+- Splitting large images into smaller tiles
+- Normalizing image bands
+- Creating RGB / false-color previews
+- Preparing 4-band image arrays for CNN input
+- Saving intermediate outputs to avoid repeated computation
 
 ---
 
-### Step 3: False/RGB Color Conversion
+## Step 2: Feature Extraction / Representation Learning
 
-Converted multi-band imagery into visualizable RGB / False-color composites.
+### Spectral Feature Extraction
 
-Band Mapping Used:
+- NDVI
+- NDWI
+- EVI
 
-- Red   → Band 4
-- Green → Band 3
-- Blue  → Band 2
-- NIR   → Band 8
+### Deep Learning Feature Extraction
+
+CNN convolutional layers automatically learned spatial features from the 4-band satellite tiles.
 
 ---
 
-## 4.3 Manual Labeling
+## Step 3: Analysis Models
+
+Implemented models include:
+
+- Custom CNN for vegetation/non-vegetation classification
+- Semi-supervised pseudo-labeling using CNN predictions
+- Random Forest for vegetation stress prediction
+- XGBoost for additional stress modeling and comparison
+
+---
+
+## Step 4: Task Definition and Decision
+
+### Task 1: Image Classification
+
+- Vegetation
+- Non-vegetation
+
+### Task 2: Environmental Stress Classification
+
+- Stressed Region
+- Non-Stressed Region
+
+---
+
+## Step 5: Quantitative Assessment
+
+Metrics used:
+
+- Validation Accuracy
+- Confusion Matrix
+- Precision
+- Recall
+- F1-score
+- Cross-Validation Accuracy
+- Feature Importance Ranking
+- Training/Validation Curves
+
+---
+
+## Step 6: Multimodal Interpretation
+
+- SPI captures temporal drought trends
+- CNN and vegetation indices capture spatial vegetation patterns
+- Random Forest/XGBoost combine visual and atmospheric features for stress prediction
+
+---
+
+# 6. Methodology
+
+---
+
+## 6.1 Atmospheric Drought Analysis
+
+### Standardized Precipitation Index (SPI)
+
+```python
+SPI = (precipitation - mean_precipitation) / std_precipitation
+```
+
+Additional climate metrics computed:
+
+- Minimum SPI
+- Mean Temperature
+- SPI Standard Deviation
+- Seasonal SPI Trends
+- Drought Anomaly Indicators
+
+---
+
+## 6.2 Satellite Image Processing
+
+Pipeline:
+
+1. TIFF Loading  
+2. Tile Generation  
+3. RGB / False-Color Visualization  
+4. Band Normalization  
+5. Feature Extraction  
+6. CNN Input Preparation  
+
+---
+
+## 6.3 Manual Labeling
 
 A subset of image tiles was manually labeled into:
 
 - Vegetation
 - Non-Vegetation
 
+These labels served as ground truth for supervised CNN training.
+
 ---
 
-## 4.4 CNN Model Development
+## 6.4 CNN-Based Vegetation Classification
 
-A custom CNN architecture was implemented using TensorFlow/Keras.
+A custom CNN was built from scratch using TensorFlow/Keras.
 
-### Architecture Summary
+### CNN Architecture
 
 - Conv2D (32 Filters)
 - MaxPooling
@@ -124,158 +224,230 @@ A custom CNN architecture was implemented using TensorFlow/Keras.
 - Conv2D (128 Filters)
 - MaxPooling
 - Flatten
-- Dense Layers
-- Sigmoid Output Layer
+- Dense
+- Dropout
+- Sigmoid Output
 
-Loss Function:
+### Training Setup
 
-- Binary Crossentropy
-
-Optimizer:
-
-- Adam
-
-Evaluation Metric:
-
-- Accuracy
+| Component | Value |
+|----------|------|
+| Loss Function | Binary Crossentropy |
+| Optimizer | Adam |
+| Output Activation | Sigmoid |
+| Task | Binary Classification |
 
 ---
 
-## 4.5 Semi-Supervised Pseudo-Labeling
+## 6.5 Semi-Supervised Pseudo-Labeling
 
-To leverage unlabeled data:
+Process:
 
-1. Baseline CNN predicts labels on unlabeled images.
-2. High-confidence predictions selected using thresholds:
+1. Train baseline CNN  
+2. Predict unlabeled images  
+3. Accept high-confidence predictions  
+4. Convert predictions into pseudo-labels  
+5. Retrain CNN  
 
-| Threshold | Meaning |
-|----------|--------|
+### Confidence Thresholds
+
+| Prediction Score | Assigned Label |
+|-----------------|---------------|
 | > 0.95 | Vegetation |
 | < 0.05 | Non-Vegetation |
 
-3. Selected pseudo-labels added to training data.
-4. Model retrained on combined dataset.
+---
+
+## 6.6 Multimodal Climate–Vegetation Fusion
+
+Merged Features:
+
+- NDVI
+- NDWI
+- EVI
+- Minimum SPI
+- Temperature
+- SPI Standard Deviation
+
+Spatial merging performed using nearest-neighbor geographic matching.
 
 ---
 
-# 5. Experiments Conducted
+## 6.7 Stress Label Definition
+
+```python
+stress = (
+    (mean_ndvi < 0.3) &
+    (spi_min < -1) &
+    (spi_std > 0.5)
+)
+```
+
+Stress criteria:
+
+- Weak Vegetation
+- Drought Present
+- Unstable Climate
 
 ---
 
-## Experiment 1: Baseline CNN
+## 6.8 Stress Prediction Model
 
-Training using only manually labeled data.
+Models:
 
-Validation Accuracy:
+- Random Forest
+- XGBoost
 
-**95.0%**
+Input Features:
 
----
+- Mean NDVI
+- Mean EVI
+- Temperature
+- SPI Standard Deviation
 
-## Experiment 2: CNN + 50 Pseudo Labels
+Evaluation:
 
-Retrained using:
-
-- Original labeled data
-- 50 pseudo-labeled samples
-
-Validation Accuracy:
-
-**92.5%**
-
----
-
-## Experiment 3: CNN + 300 Pseudo Labels
-
-Retrained using:
-
-- Original labeled data
-- 300 pseudo-labeled samples
-
-Validation Accuracy:
-
-**87.5%**
+- Classification Report
+- Confusion Matrix
+- Cross-Validation
+- Feature Importance
 
 ---
 
-# 6. Results & Evaluation
+## 6.9 Priority Risk Mapping
+
+```python
+priority_score =
+    (-spi_min * 0.5) +
+    (spi_std * 0.3) +
+    ((1 - mean_ndvi) * 0.2)
+```
+
+Used to rank drought/stress severity.
 
 ---
 
-## Confusion Matrix
+# 7. Experiments and Results
 
-See:
+## 7.1 CNN Vegetation Classification Results
 
-`results/confusion_matrix.png`
-
-Summary:
-
-- True Non-Veg Correct: 18
-- False Positive: 2
-- False Negative: 2
-- True Veg Correct: 18
+| Experiment | Validation Accuracy |
+|-----------|--------------------|
+| Baseline CNN | 95.0% |
+| CNN + 50 Pseudo Labels | 92.5% |
+| CNN + 300 Pseudo Labels | 87.5% |
 
 ---
 
-## Classification Report
+## 7.2 CNN Confusion Matrix
+
+| Result Type | Count |
+|------------|------|
+| True Non-Vegetation Correct | 18 |
+| False Positive | 2 |
+| False Negative | 2 |
+| True Vegetation Correct | 18 |
+
+---
+
+## 7.3 CNN Classification Report
 
 | Metric | Value |
 |-------|------|
 | Precision | 0.90 |
 | Recall | 0.90 |
-| F1-Score | 0.90 |
+| F1-score | 0.90 |
 | Accuracy | 0.90 |
 
 ---
 
-## Training / Validation Curves
+## 7.4 Stress Prediction Results
 
-See:
-
-`results/accuracy_loss_curves.png`
-
----
-
-# 7. Key Findings
-
-1. Baseline CNN achieved strongest performance.
-2. Small pseudo-label additions slightly reduced performance.
-3. Large pseudo-label additions degraded performance further.
-4. Indicates pseudo-label noise can harm generalization.
-5. Demonstrates importance of confidence filtering in semi-supervised learning.
+| Metric | Value |
+|-------|------|
+| Accuracy | ~97% |
+| Cross-Validation Mean Accuracy | ~92.8% |
 
 ---
 
-# 8. Computational Challenges
+## 7.5 Feature Importance Ranking
 
-The project encountered:
-
-- GPU/RAM limitations in Google Colab
-- Long preprocessing times for large TIFF datasets
-- Difficulty scaling pseudo-labeling across full 17K dataset
-
-Mitigation strategies included:
-
-- Batch processing
-- Drive caching
-- Subset pseudo-label experiments
+1. NDVI  
+2. EVI  
+3. Temperature  
+4. SPI Variability  
 
 ---
 
-# 9. Repository Structure
+# 8. Key Findings
+
+- Baseline CNN successfully classified vegetation/non-vegetation
+- Semi-supervised pseudo-labeling did not improve performance
+- Excess pseudo-labeling introduced noise
+- SPI provided temporal drought context
+- Climate fusion improved environmental interpretation
+- Stress models identified high-risk regions effectively
+
+---
+
+# 9. Computational Challenges
+
+Challenges encountered:
+
+- Large TIFF image sizes
+- Limited Colab runtime stability
+- Slow Google Drive I/O
+- High memory cost for large-scale pseudo-labeling
+
+Mitigation:
+
+- Batch Processing
+- Subset Experiments
+- Persistent Caching
+- Saving Intermediate Arrays
+
+---
+
+# 10. Generated Outputs
+
+- RGB / False-Color Previews
+- CNN Training Curves
+- Confusion Matrices
+- Classification Reports
+- Pseudo-Label Comparison Table
+- Drought Anomaly Maps
+- Stress Maps
+- Priority Risk Rankings
+- Feature Importance Plots
+
+---
+
+# 11. Repository Structure
 
 ```text
-notebooks/     → Jupyter/Colab notebooks
-src/           → Python scripts/modules
-results/       → Output plots/metrics
-figures/       → Example images/visuals
+artificial-vision-final-project/
+│
+├── README.md
+├── requirements.txt
+│
+├── notebooks/
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_spi_analysis.ipynb
+│   ├── 03_cnn_training.ipynb
+│   ├── 04_pseudo_labeling.ipynb
+│   ├── 05_multimodal_fusion.ipynb
+│   └── 06_stress_modeling_and_evaluation.ipynb
+│
+├── src/
+├── data/
+├── models/
+├── results/
+└── figures/
 ```
 
 ---
 
-# 10. How to Run
-
----
+# 12. How to Run
 
 ## Install Dependencies
 
@@ -283,42 +455,56 @@ figures/       → Example images/visuals
 pip install -r requirements.txt
 ```
 
----
+## Run Order
 
-## Execute Workflow
-
-1. Run preprocessing notebook/script
-2. Run CNN training notebook
-3. Run pseudo-labeling notebook
-4. Run evaluation notebook
-
----
-
-# 11. Technologies Used
-
-- Python
-- TensorFlow / Keras
-- NumPy
-- Pandas
-- Rasterio
-- Matplotlib
-- Seaborn
-- Scikit-Learn
+1. `01_data_preprocessing.ipynb`  
+2. `02_spi_analysis.ipynb`  
+3. `03_cnn_training.ipynb`  
+4. `04_pseudo_labeling.ipynb`  
+5. `05_multimodal_fusion.ipynb`  
+6. `06_stress_modeling_and_evaluation.ipynb`  
 
 ---
 
-# 12. Future Work
+# 13. Limitations
 
-Potential improvements include:
-
-- Use transfer learning with pretrained CNNs
-- Improve pseudo-label confidence calibration
-- Use active learning instead of pseudo-labeling
-- Deploy on dedicated GPU hardware for full dataset scaling
+- Small labeled dataset
+- Pseudo-labeling introduced noise
+- Full 17k-scale processing limited by compute resources
+- LSTM temporal modeling was unstable
+- Spatial climate-image matching used nearest-neighbor approximation
 
 ---
 
-# 13. Author
+# 14. Future Work
+
+- More manually labeled data
+- Improved pseudo-label filtering
+- Active Learning
+- Transfer Learning for Multispectral Data
+- Better Temporal Alignment
+- LSTM/Transformer Temporal Forecasting
+- GPU Deployment
+- Dashboard Deployment
+
+---
+
+# 15. Conclusion
+
+This project demonstrates a complete artificial vision and multimodal environmental analysis pipeline combining:
+
+- Satellite Image Processing
+- CNN-Based Vegetation Classification
+- Semi-Supervised Learning
+- SPI Drought Analysis
+- Climate–Vegetation Fusion
+- Machine Learning Stress Prediction
+
+Together, these provide a stronger framework for identifying vegetation stress and prioritizing high-risk environmental regions.
+
+---
+
+# 16. Author
 
 **Peace Ebika**  
 Artificial Vision Final Project  
