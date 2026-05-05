@@ -371,7 +371,22 @@ Used to rank drought/stress severity.
 
 ---
 
-## 7.4 Stress Prediction Results
+## 7.4 Random Forest Feature Importance
+
+A Random Forest classifier was implemented to predict environmental stress using multimodal features derived from satellite vegetation indices and atmospheric data.
+
+The feature importance results showed:
+
+| Feature | Importance |
+|---|---:|
+| Mean NDWI | 0.473929 |
+| Mean EVI | 0.362667 |
+| Temperature | 0.163403 |
+
+This indicates that NDWI contributed the most to the stress prediction model, followed by EVI and temperature. The result suggests that water-related vegetation/moisture information played the strongest role in identifying stressed regions in this experiment.
+---
+
+## 7.5 Stress Prediction Results
 
 | Metric | Value |
 |-------|------|
@@ -380,7 +395,7 @@ Used to rank drought/stress severity.
 
 ---
 
-## 7.5 Feature Importance Ranking
+## 7.6 Feature Importance Ranking
 
 1. NDVI  
 2. EVI  
