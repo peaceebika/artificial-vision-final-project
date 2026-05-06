@@ -649,7 +649,7 @@ Together, these provide a stronger framework for identifying vegetation stress a
 
 # 16. Author
 
-**Peace Ebika**  
+**Peace Chinemere Ebika**  
 Artificial Vision Final Project  
 Universidad de las Americas Puebla
 
