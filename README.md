@@ -339,7 +339,16 @@ Used to rank drought/stress severity.
 
 # 7. Experiments and Results
 
-## 7.1 CNN Vegetation Classification Results
+## 7.1 CNN Classification Results
+### CNN Training Curves
+
+The CNN training process showed strong convergence behavior with increasing accuracy and decreasing loss across training epochs.
+
+The similarity between training and validation curves suggests that the model generalized well without severe overfitting.
+
+![CNN Training Curves](results/cnn_training_curves.png)
+
+## 7.2 CNN Vegetation Classification Results
 
 | Experiment | Validation Accuracy |
 |-----------|--------------------|
@@ -349,7 +358,7 @@ Used to rank drought/stress severity.
 
 ---
 
-## 7.2 CNN Confusion Matrix
+### CNN Confusion Matrix
 
 | Result Type | Count |
 |------------|------|
