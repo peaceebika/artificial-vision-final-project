@@ -358,6 +358,8 @@ Used to rank drought/stress severity.
 | False Negative | 2 |
 | True Vegetation Correct | 18 |
 
+![confusion matrix](confusion_matrix.png)
+
 ---
 
 ## 7.3 CNN Classification Report
