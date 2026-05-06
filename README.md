@@ -88,6 +88,26 @@ This project addresses the following problem:
 | Unlabeled Samples | 16,975 |
 
 ---
+## 4.4 Study Region
+
+The study focused on a region within Mexico defined approximately by:
+
+- Longitude: -100° to -97°
+- Latitude: 18° to 21°
+
+This region was selected for satellite-image extraction and atmospheric drought analysis.
+
+The same geographic region was used consistently for:
+
+- Sentinel-2 multispectral image acquisition
+- ERA5 climate-data extraction
+- SPI drought computation
+- Spatial vegetation-stress analysis
+
+The study region was processed using Google Earth Engine for satellite imagery and ERA5 reanalysis climate data for atmospheric analysis.
+
+---
+
 
 # Computer Vision Pipeline
 
