@@ -116,6 +116,10 @@ Coordinates:
 - East: -97
 - South: 18
 - North: 21
+
+The figure below shows the geographic study area used for Sentinel-2 satellite image acquisition and ERA5 atmospheric analysis.
+
+![Study Region](figures/study_region_map.png)
 ---
 
 
