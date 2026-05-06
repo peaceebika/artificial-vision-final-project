@@ -70,7 +70,7 @@ This project addresses the following problem:
 
 ## 4.2 Atmospheric Data
 
-- **Source:** ERA5 Reanalysis Climate Data :ERA5 climate data was extracted for the same Mexico study region used for satellite-image analysis to ensure spatial consistency between atmospheric and image-based datasets.
+- **Source:** ERA5 Reanalysis Climate Data - data was extracted for the same Mexico study region used for satellite-image analysis to ensure spatial consistency between atmospheric and image-based datasets.
 - **Provider:** ECMWF / Copernicus Climate Data Store  
 - **Dataset Link:**  
   - ERA5 Monthly Reanalysis: [View the ERA5 Code](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=download)
