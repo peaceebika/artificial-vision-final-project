@@ -1,5 +1,5 @@
 # Artificial Vision Final Project
-## Multimodal Vegetation Stress and Drought Analysis Using Satellite Imagery, CNNs, SPI, and Machine Learning
+## Detecting and Modeling Spatio-Temporal Environmental Stress Patterns
 
 ---
 
