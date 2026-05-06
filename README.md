@@ -87,7 +87,7 @@ This project addresses the following problem:
 
 ---
 
-# Computer Vision Pipeline Alignment with Course Requirements
+# Computer Vision Pipeline Alignment
 
 ---
 
