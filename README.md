@@ -58,7 +58,7 @@ This project addresses the following problem:
 - **Source:** Sentinel-2 / Landsat Multispectral TIFF Imagery  
 - **Acquisition Platform:** Google Earth Engine  
 - **Dataset Link:**  
-  - Sentinel-2 Harmonized: [View the Earth Engine Code](https://code.earthengine.google.com/57f295458a2a7c4d9310470e3eb3a161?noload=1)
+  - Sentinel-2: [View the Earth Engine Code](https://code.earthengine.google.com/57f295458a2a7c4d9310470e3eb3a161?noload=1)
  
 - **Bands Used:**
   - Red
