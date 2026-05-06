@@ -1,5 +1,7 @@
 # Artificial Vision Final Project
 ## Detecting and Modeling Spatio-Temporal Environmental Stress Patterns
+### Using Multi-Spectral Satellite Imagery to Support Water Equity Decision-Making
+
 
 ---
 
