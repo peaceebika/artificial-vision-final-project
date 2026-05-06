@@ -107,6 +107,16 @@ The same geographic region was used consistently for:
 The study region was processed using Google Earth Engine for satellite imagery and ERA5 reanalysis climate data for atmospheric analysis.
 
 ---
+### Study Region Visualization
+
+The study area corresponds to a region in Mexico analyzed using multispectral Sentinel-2 imagery and ERA5 atmospheric data.
+
+Coordinates:
+- West: -100
+- East: -97
+- South: 18
+- North: 21
+---
 
 
 # Computer Vision Pipeline
