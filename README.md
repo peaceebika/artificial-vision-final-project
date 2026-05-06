@@ -583,8 +583,8 @@ artificial-vision-final-project/
 │
 ├── src/
 ├── data/
-├── models/
-├── results/
+├── results
+├── script.js/
 └── figures/
 ```
 
