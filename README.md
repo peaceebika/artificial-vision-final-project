@@ -358,7 +358,7 @@ Used to rank drought/stress severity.
 | False Negative | 2 |
 | True Vegetation Correct | 18 |
 
-![confusion matrix](confusion_matrix.png)
+![confusion matrix](results/confusion_matrix.png)
 
 ---
 
