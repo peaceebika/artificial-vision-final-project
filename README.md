@@ -594,15 +594,8 @@ artificial-vision-final-project/
 
 ---
 
-# 12. How to Run
 
-## Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## Run Order
+# 12. Run Order
 
 1. `01_data_preprocessing.ipynb`  
 2. `02_spi_analysis.ipynb`  
