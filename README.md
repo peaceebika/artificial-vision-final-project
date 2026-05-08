@@ -389,8 +389,8 @@ The similarity between training and validation curves suggests that the model ge
 | Experiment | Validation Accuracy |
 |-----------|--------------------|
 | Baseline CNN | 95.0% |
-| CNN + 50 Pseudo Labels | 92.5% |
-| CNN + 300 Pseudo Labels | 87.5% |
+| CNN + 50 Pseudo Labels | 95.0% |
+| CNN + 300 Pseudo Labels | 90.0% |
 
 ---
 
